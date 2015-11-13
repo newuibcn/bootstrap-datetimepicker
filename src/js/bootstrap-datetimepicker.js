@@ -1,3 +1,5 @@
+/* */ 
+"format global";
 /*! version : 4.17.37
  =========================================================
  bootstrap-datetimejs
@@ -200,11 +202,13 @@
                 var headTemplate = $('<thead>')
                         .append($('<tr>')
                             .append($('<th>').addClass('prev').attr('data-action', 'previous')
-                                .append($('<span>').addClass(options.icons.previous))
+                                //.append($('<span>').addClass(options.icons.previous))
+                            .append($('<span>').addClass('material-icons').html('keyboard_arrow_left'))
                                 )
                             .append($('<th>').addClass('picker-switch').attr('data-action', 'pickerSwitch').attr('colspan', (options.calendarWeeks ? '6' : '5')))
                             .append($('<th>').addClass('next').attr('data-action', 'next')
-                                .append($('<span>').addClass(options.icons.next))
+                                //.append($('<span>').addClass(options.icons.next))
+                  .append($('<span>').addClass('material-icons').html('keyboard_arrow_right'))
                                 )
                             ),
                     contTemplate = $('<tbody>')
@@ -244,12 +248,14 @@
                 if (isEnabled('h')) {
                     topRow.append($('<td>')
                         .append($('<a>').attr({href: '#', tabindex: '-1', 'title': options.tooltips.incrementHour}).addClass('btn').attr('data-action', 'incrementHours')
-                            .append($('<span>').addClass(options.icons.up))));
+                            //.append($('<span>exit_to_app').addClass(options.icons.up))));
+                        .append($('<span>').addClass('material-icons').html('keyboard_arrow_up'))));
                     middleRow.append($('<td>')
                         .append($('<span>').addClass('timepicker-hour').attr({'data-time-component':'hours', 'title': options.tooltips.pickHour}).attr('data-action', 'showHours')));
                     bottomRow.append($('<td>')
                         .append($('<a>').attr({href: '#', tabindex: '-1', 'title': options.tooltips.decrementHour}).addClass('btn').attr('data-action', 'decrementHours')
-                            .append($('<span>').addClass(options.icons.down))));
+                            //.append($('<span>').addClass(options.icons.down))));
+                        .append($('<span>').addClass('material-icons').html('keyboard_arrow_down'))));
                 }
                 if (isEnabled('m')) {
                     if (isEnabled('h')) {
@@ -259,12 +265,14 @@
                     }
                     topRow.append($('<td>')
                         .append($('<a>').attr({href: '#', tabindex: '-1', 'title': options.tooltips.incrementMinute}).addClass('btn').attr('data-action', 'incrementMinutes')
-                            .append($('<span>').addClass(options.icons.up))));
+                            //.append($('<span>m').addClass(options.icons.up))));
+                        .append($('<span>').addClass('material-icons').html('keyboard_arrow_up'))));
                     middleRow.append($('<td>')
                         .append($('<span>').addClass('timepicker-minute').attr({'data-time-component': 'minutes', 'title': options.tooltips.pickMinute}).attr('data-action', 'showMinutes')));
                     bottomRow.append($('<td>')
                         .append($('<a>').attr({href: '#', tabindex: '-1', 'title': options.tooltips.decrementMinute}).addClass('btn').attr('data-action', 'decrementMinutes')
-                            .append($('<span>').addClass(options.icons.down))));
+                            //.append($('<span>').addClass(options.icons.down))));
+                        .append($('<span>').addClass('material-icons').html('keyboard_arrow_down'))));
                 }
                 if (isEnabled('s')) {
                     if (isEnabled('m')) {
@@ -274,12 +282,14 @@
                     }
                     topRow.append($('<td>')
                         .append($('<a>').attr({href: '#', tabindex: '-1', 'title': options.tooltips.incrementSecond}).addClass('btn').attr('data-action', 'incrementSeconds')
-                            .append($('<span>').addClass(options.icons.up))));
+                            //.append($('<span>').addClass(options.icons.up))));
+                        .append($('<span>').addClass('material-icons').html('keyboard_arrow_up'))));
                     middleRow.append($('<td>')
                         .append($('<span>').addClass('timepicker-second').attr({'data-time-component': 'seconds', 'title': options.tooltips.pickSecond}).attr('data-action', 'showSeconds')));
                     bottomRow.append($('<td>')
                         .append($('<a>').attr({href: '#', tabindex: '-1', 'title': options.tooltips.decrementSecond}).addClass('btn').attr('data-action', 'decrementSeconds')
-                            .append($('<span>').addClass(options.icons.down))));
+                            //.append($('<span>').addClass(options.icons.down))));
+                        .append($('<span>').addClass('material-icons').html('keyboard_arrow_down'))));
                 }
 
                 if (!use24Hours) {
@@ -2383,7 +2393,8 @@
         icons: {
             time: 'glyphicon glyphicon-time',
             date: 'glyphicon glyphicon-calendar',
-            up: 'glyphicon glyphicon-chevron-up',
+            //up: 'glyphicon glyphicon-chevron-up',
+            up: 'material-icons',
             down: 'glyphicon glyphicon-chevron-down',
             previous: 'glyphicon glyphicon-chevron-left',
             next: 'glyphicon glyphicon-chevron-right',
